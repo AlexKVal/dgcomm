@@ -1,28 +1,28 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-gem 'sqlite3'
+gem 'sqlite3', '1.3.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',   '3.1.4'
+  gem 'coffee-rails', '3.1.1'
+  gem 'uglifier',     '1.0.4'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '1.0.17'
+
+gem 'rspec-rails', '2.7.0', :group => [:development, :test]
 
 group :development do
-  gem 'rspec-rails'
-  gem 'haml-rails'
+  gem 'haml-rails', '0.3.4'
 end
 
 group :test do
-  gem 'rspec-rails'
-  gem "factory_girl_rails"
-  gem "cucumber-rails"
-  gem 'database_cleaner'
-  gem "capybara"
-  gem "launchy" # Launchy.open( "http://www.ruby-lang.org" )
+  gem "factory_girl_rails", '1.3.0'
+  gem "cucumber-rails", '1.2.0'
+  gem 'database_cleaner', '0.6.7'
+  gem "capybara", '1.1.1'
+  gem "launchy", '2.0.5' # Launchy.open( "http://www.ruby-lang.org" )
 end
