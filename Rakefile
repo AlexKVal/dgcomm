@@ -5,3 +5,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 Dgcomm::Application.load_tasks
+
+#task :default => :test
+desc "Run all tests"
+task :test do
+end
