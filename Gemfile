@@ -25,5 +25,10 @@ group :test do
   gem 'database_cleaner', '0.6.7'
   gem "capybara", '1.1.1'
   gem "launchy", '2.0.5' # Launchy.open( "http://www.ruby-lang.org" )
+
   gem 'spork'
+  gem 'autotest'#, '4.4.6'
+  gem 'autotest-rails-pure'#, '4.1.2'
+  gem 'autotest-fsevent'#, '0.2.4'
+  gem 'autotest-growl'#, '0.2.9'
 end
