@@ -38,18 +38,6 @@ Spork.prefork do
 
     config.include FactoryGirl::Syntax::Methods
   end
-
-  # Usage:
-  #
-  # context "factory" do
-  #   it { should have_valid_factory(:address) }
-  # end
-  RSpec::Matchers.define :have_valid_factory do |factory_name|
-    match do |model|
-      Factory(factory_name).new_record?.should be_false
-      #Factory(factory_name).should_not be_new_record
-    end
-  end
 end
 
 Spork.each_run do

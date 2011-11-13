@@ -1,5 +1,5 @@
 Given /^a product with the title "([^"]*)"$/ do |name|
-  Product.create!(:name => name)
+  Product.create!(name: name)
 end
 
 When /^I am on the home page$/ do
