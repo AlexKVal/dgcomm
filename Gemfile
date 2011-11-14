@@ -17,7 +17,7 @@ gem 'haml-rails', '0.3.4'
 gem 'rspec-rails', '2.7.0', :group => [:development, :test]
 
 group :development do
-  #
+  gem 'guard-livereload'
 end
 
 group :test do
@@ -27,9 +27,15 @@ group :test do
   gem "capybara", '1.1.1'
   gem "launchy", '2.0.5' # Launchy.open( "http://www.ruby-lang.org" )
 
-  gem 'spork'
-  gem 'autotest'#, '4.4.6'
-  gem 'autotest-rails-pure'#, '4.1.2'
-  gem 'autotest-fsevent'#, '0.2.4'
-  gem 'autotest-growl'#, '0.2.9'
+  gem 'spork', '0.9.0.rc9' # v 1.0 has bug "undefined method `World' for main:Object"
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'rb-fsevent'
+  gem 'growl'
+  
+#  gem 'autotest'#, '4.4.6'
+#  gem 'autotest-rails-pure'#, '4.1.2'
+#  gem 'autotest-fsevent'#, '0.2.4'
+#  gem 'autotest-growl'#, '0.2.9'
 end
