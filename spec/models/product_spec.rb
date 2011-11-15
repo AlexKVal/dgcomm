@@ -25,7 +25,7 @@ describe Product do
     end
 
     it "should reject names that are too long" do
-      long_name = "a" * 51
+      long_name = "a" * 121
       @product.name = long_name
       @product.should_not be_valid
     end
