@@ -15,6 +15,7 @@ gem 'jquery-rails', '1.0.17'
 gem 'haml-rails', '0.3.4'
 
 gem 'rspec-rails', '2.7.0', :group => [:development, :test]
+gem 'faker', :group => [:development, :test]
 
 group :development do
   gem 'guard-livereload'
