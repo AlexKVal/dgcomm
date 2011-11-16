@@ -22,7 +22,7 @@ task :products => :environment do
     if max < name.size then max = name.size; longest_name = name end
     
     src_url = item.at_css('img')[:src]
-    filename = "#{File.basename(src_url)}"
+    filename = File.basename(src_url).gsub('%', "_")
     system("curl --silent --remote-time --output #{full_path_to_photos}/#{filename} #{src_url}")
     
     Product.create!(name: name, photo: "#{photos_dir}/#{filename}")

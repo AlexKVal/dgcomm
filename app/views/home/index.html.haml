@@ -1,3 +1,6 @@
-- for product in @products
-  %p= product.name
-  %img{:src => product.photo, :alt => short_name(product.name)}
+%div#main
+  %div#widthPreserver
+  - for product in @products
+    %div.product
+      %p= product.name
+      %img{:src => product.photo, :alt => short_name(product.name)}
