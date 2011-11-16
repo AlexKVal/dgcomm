@@ -1,6 +1,10 @@
-%div#main
-  %div#widthPreserver
+#main
+  #widthPreserver
+  - num = 0
   - for product in @products
-    %div.product
+    .product
+      .number
+        = "#{num += 1}."
+      %img{ src: product.photo, alt: short_name(product.name) }
       %p= product.name
-      %img{:src => product.photo, :alt => short_name(product.name)}
+      

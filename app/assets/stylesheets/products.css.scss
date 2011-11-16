@@ -11,5 +11,23 @@
   height: 1px;
   width: 760px;
 }
-// http://localhost:3000/amazon_photos/I/517%2BbpHK4HL._SL160_AA160_.jpg
-// http://ecx.images-amazon.com/images/I/517%2BbpHK4HL._AA160_.jpg
+
+div.product {
+  font-weight: bold;
+  text-decoration: none;
+  color: #004B91;
+  font-size: 85%;
+  
+  border-top: 1px solid #DDD;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 32%;
+  padding: 8px 4px 4px 0;
+}
+
+div.number {
+  color: #666;
+  float: left;
+  font-size: 75%;
+}
