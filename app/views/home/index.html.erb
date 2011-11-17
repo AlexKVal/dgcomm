@@ -1,0 +1,12 @@
+<div id="main">
+  <div id="widthPreserver"></div>
+  <% num = 0 %>
+  <% for product in @products %>
+    <div class="product">
+      <div class="number"><%= "#{num += 1}." %></div>
+			<%= tag("img", src: product.photo, alt: short_name(product.name)) %>
+      <div class="product_name"><%= product.name %></div>
+    </div>
+	<% end %>
+</div>
+​
