@@ -12,7 +12,6 @@ group :assets do
 end
 
 gem 'jquery-rails', '1.0.17'
-gem 'haml-rails', '0.3.4'
 
 gem 'rspec-rails', '2.7.0', :group => [:development, :test]
 gem 'faker', :group => [:development, :test]
@@ -34,9 +33,4 @@ group :test do
   gem 'guard-cucumber'
   gem 'rb-fsevent'
   gem 'growl'
-  
-#  gem 'autotest'#, '4.4.6'
-#  gem 'autotest-rails-pure'#, '4.1.2'
-#  gem 'autotest-fsevent'#, '0.2.4'
-#  gem 'autotest-growl'#, '0.2.9'
 end

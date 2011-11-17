@@ -1,9 +1,0 @@
-#main
-  #widthPreserver
-  - num = 0
-  - for product in @products
-    .product
-      .number
-        = "#{num += 1}."
-      %img{ src: product.photo, alt: short_name(product.name) }
-      %p= product.name

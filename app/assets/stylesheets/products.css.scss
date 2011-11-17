@@ -1,7 +1,6 @@
 #main {
-  margin-left: 210px;
+  margin-right: 210px;
   min-width: 760px;
-  right: 23%;
   background-color: #FFF;
   padding: 0px 5px;
 }
@@ -13,21 +12,35 @@
 }
 
 div.product {
-  font-weight: bold;
-  text-decoration: none;
-  color: #004B91;
-  font-size: 85%;
-
   border-top: 1px solid #DDD;
   float: left;
   overflow: hidden;
   position: relative;
   width: 32%;
-  padding: 8px 4px 4px 0;
+  padding: 8px 0 4px 0;
 }
 
 div.number {
   color: #666;
   float: left;
   font-size: 75%;
+}
+
+// all info about product in a product cell
+div.data {
+  padding-right: 6px;
+}
+
+.product_name {
+  font-weight: bold;
+  text-decoration: none;
+  color: #004B91;
+  font-size: 75%;
+  padding-right: 4px;
+  padding-bottom: 4px;
+}
+
+.unfloat {
+  clear: both;
+  line-height: 0;
 }
