@@ -1,17 +1,15 @@
-<% if @products.any? %>
-	<% @products.inject(1) do |num, product| %>
-		<div class="product">
-		  <div class="number"><%= "#{num}." %></div>
-			<%#= link_to image_tag("/#{product.photo}",
-									alt: short_name(product.name)),
-			 						product%>
-			<div class="data">
-				<%= link_to product.name, product, class: 'product_name' %>
-			</div>
+<% @products.inject(1) do |num, product| %>
+	<div class="product">
+	  <div class="number"><%= "#{num}." %></div>
+		<%#= link_to image_tag("/#{product.photo}",
+								alt: short_name(product.name)),
+		 						product%>
+		<div class="data">
+			<%= link_to product.name, product, class: 'product_name' %>
 		</div>
-		<% if num % 3 == 0 %>
-		<br class="unfloat">
-	  <% end %>
-	<% num += 1 %>
-	<% end %>
-<% end %>
+	</div>
+	<% if num % 3 == 0 %>
+	<br class="unfloat">
+  <% end %>
+<% num += 1 %>
+<% end unless @products.empty? %>
