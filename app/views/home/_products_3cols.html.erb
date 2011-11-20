@@ -4,9 +4,9 @@
 		  <div class="number"><%= "#{num}." %></div>
 			<%#= link_to image_tag("/#{product.photo}",
 									alt: short_name(product.name)),
-			 						product_path(product)%>
+			 						product%>
 			<div class="data">
-				<%= link_to product.name, product_path(product), class: 'product_name' %>
+				<%= link_to product.name, product, class: 'product_name' %>
 			</div>
 		</div>
 		<% if num % 3 == 0 %>

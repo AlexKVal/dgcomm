@@ -1,7 +1,7 @@
-Feature: Order Products
-  In order to order products
+Feature: View Products
+  In order to do shopping products
   As a client
-  I want to be able to select and order products
+  I want to be able to view products
 
   Scenario: Browsing a list of products
     Given a product with the name "Ruby on Rails book"

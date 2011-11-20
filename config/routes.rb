@@ -3,6 +3,10 @@ Dgcomm::Application.routes.draw do
   
   resources :products
   
+  namespace :admin do
+    resources :products
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

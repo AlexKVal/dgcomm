@@ -11,6 +11,7 @@ Spork.prefork do
   require 'cucumber/rails'
   
   Capybara.default_selector = :css
+  Capybara.save_and_open_page_path = File.join(Rails.root, "tmp")
 end
  
 Spork.each_run do

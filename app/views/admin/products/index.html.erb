@@ -1,0 +1,7 @@
+<% if @products.any? %>
+	<% @products.each do |product| %>
+	<div class="product">
+		<%= link_to product.name, admin_product_path(product), class: 'product_name' %>
+	</div>
+	<% end %>
+<% end %>
