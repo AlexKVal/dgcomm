@@ -11,6 +11,6 @@ Feature: Admin managing Products
     Given a product with the name "Ruby on Rails book"
     When I go to path "/admin/products"
     And follow "Ruby on Rails book"
-    When I fill in "Product name" with "apache baseball cap 99"
+    When I fill in "product_name" with "apache baseball cap 99"
     When I press "Update"
-    Then I should see "successfully updated!"
+    Then I should see "Successfully updated!"

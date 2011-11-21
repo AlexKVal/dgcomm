@@ -1,0 +1,17 @@
+- admin/products 
+  add/create new
+  edit
+  delete
+
+- products +price
+  to admin/products
+  to home products
+
+- products +images Paperclip
+
+- java show all images like in amazon
+
+- rights ?
+
+- home page +links:
+  admin - only if logged user has admin rights
