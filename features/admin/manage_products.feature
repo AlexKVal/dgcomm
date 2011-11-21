@@ -7,10 +7,18 @@ Feature: Admin managing Products
     Then I should see "Ruby on Rails book"
     And I should see "Panasonic TV"
 
-  Scenario: Edit product
+  Scenario: Edititing product
     Given a product with the name "Ruby on Rails book"
     When I go to path "/admin/products"
     And follow "Ruby on Rails book"
     When I fill in "product_name" with "apache baseball cap 99"
     When I press "Update"
     Then I should see "Successfully updated!"
+
+  @del
+  Scenario: Deleting product
+    Given a product with the name "Ruby on Rails book"
+    When I go to path "/admin/products"
+    And follow "Remove"
+    Then I should see "Product has been deleted!"
+

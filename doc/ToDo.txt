@@ -1,6 +1,5 @@
-- admin/products 
+- admin/products
   add/create new
-  edit
   delete
 
 - products +price

@@ -19,4 +19,11 @@ class Admin::ProductsController < Admin::BaseController
       render :edit, alert: "Successfully updated!"
     end
   end
+
+  # DELETE /admin/products/1
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to admin_products_path, notice: "Product has been deleted!"
+  end
 end
