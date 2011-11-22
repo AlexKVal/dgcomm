@@ -2,35 +2,31 @@ def empty_dir(path)
   Dir.entries(path).reject { |entry| ['.', '..'].include? entry }.each { |f| File.delete("#{path}/#{f}") }
 end
 
-desc "Fetch products off Amazon"
+def grab_description(productname, desc_url)
+  desc_element = Nokogiri::HTML(open desc_url).at_css(".productDescriptionWrapper")
+  desc_element.nil? ? '' : desc_element.text.strip
+end
+
+desc "Fetch products data from Amazon"
 task :products => :environment do
   require "nokogiri"
   require "open-uri"
 
-  photos_dir = "amazon_photos/I"
-  full_path_to_photos = "#{Rails.root}/public/#{photos_dir}"
-  url = 'http://www.amazon.com/Digital-SLRs-Cameras-Photo/b/ref=amb_link_6742562_1?ie=UTF8&node=3017941&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-5&pf_rd_r=0VGJA3MFRDFRCZX42DR6&pf_rd_t=101&pf_rd_p=1266111442&pf_rd_i=515382011'
-  doc = Nokogiri::HTML(open(url))
-
+  url = 'http://www.amazon.com/Best-Sellers-Video-Games-Game-Downloads/zgbs/videogames/979455011/ref=zg_bs_979455011_pg_2?_encoding=UTF8&pg='
   Product.delete_all
-  empty_dir(full_path_to_photos)
 
-  max, longest_name = 0, ''
+  (1..5).each do |n|
+    doc = Nokogiri::HTML(open("#{url}#{n}"))
 
-  doc.css(".product").each do |item|
-    name = item.at_css('.srTitle').text.strip
-    if max < name.size then max = name.size; longest_name = name end
-    
-    src_url = item.at_css('img')[:src]
-    filename = File.basename(src_url).gsub('%', "_")
-    system("curl --silent --remote-time --output #{full_path_to_photos}/#{filename} #{src_url}")
-    
-    Product.create!(name: name, photo: "#{photos_dir}/#{filename}")
-    print '.'
-    #p "#{i.at_css('.srTitle').text} - #{i.at_css('.listprice, .otherprice').text}"
-    #p i.at_css('a')[:href]
+    doc.css(".zg_itemRow").each do |item|
+      name = item.at_css('.zg_title').text.strip
+
+      desc_url = item.at_css('.zg_title a')[:href].strip
+      description = grab_description name, desc_url
+
+      Product.create!(name: name, description: "#{description}")
+      print '.'
+    end
+    puts "\n#{n}===================================="
   end
-
-  puts "\nmax = #{max} \nname= #{longest_name}"
-  puts "Imported #{doc.css(".product").size} products."
 end
