@@ -27,3 +27,11 @@ Feature: Admin managing Products
     When I fill in "product_name" with "Ruby on Rails book"
     When I press "Create"
     Then I should see "Product was successfully added"
+
+  Scenario: A product's name should be unique
+    Given a product with the name "Ruby on Rails book"
+    When I go to path "/admin/products"
+    And follow "Add a new product"
+    When I fill in "product_name" with "Ruby on Rails book"
+    When I press "Create"
+    Then I should see "has already been taken"

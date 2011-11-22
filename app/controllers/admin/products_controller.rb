@@ -1,7 +1,7 @@
 class Admin::ProductsController < Admin::BaseController
   # GET /admin/products
   def index
-    @products = Product.all
+    @products = Product.all(order: :name)
   end
 
   # GET /admin/products/new
