@@ -1,7 +1,7 @@
 class Admin::ProductsController < Admin::BaseController
   # GET /admin/products
   def index
-    @products = Product.all(order: :name)
+    @products = Product.paginate(page: params[:page], per_page: 10, order: :name)
   end
 
   # GET /admin/products/new

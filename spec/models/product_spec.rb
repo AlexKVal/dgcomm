@@ -29,6 +29,11 @@ describe Product do
       @product.name = long_name
       @product.should_not be_valid
     end
-  end
 
+    it "should not allow duplicate names" do
+      same_name_product = Factory(:product)
+      same_name_product.name = @product.name
+      same_name_product.should_not be_valid
+    end
+  end
 end

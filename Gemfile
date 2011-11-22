@@ -12,6 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.0.2'
 
 gem 'rspec-rails', '~> 2.7.0', :group => [:development, :test]
 gem 'faker', :group => [:development, :test]

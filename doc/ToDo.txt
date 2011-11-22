@@ -1,6 +1,4 @@
-- admin/products
-  add/create new
-  delete
+- products pagination
 
 - products +price
   to admin/products
