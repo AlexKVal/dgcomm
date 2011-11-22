@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113160210) do
+ActiveRecord::Schema.define(:version => 20111122190646) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   add_index "products", ["name"], :name => "index_products_on_name", :unique => true
