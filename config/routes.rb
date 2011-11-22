@@ -1,10 +1,10 @@
 Dgcomm::Application.routes.draw do
   root :to => 'home#index'
   
-  resources :products
+  resources :products, only: :show
   
   namespace :admin do
-    resources :products
+    resources :products, except: :show
   end
   
   # The priority is based upon order of creation:

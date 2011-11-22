@@ -3,5 +3,6 @@ FactoryGirl.define do
 
   factory :product do
     name { Factory.next :product_sequence }
+    description { Faker::Lorem.paragraphs(rand(5)+1).join("\n") }
   end
 end
