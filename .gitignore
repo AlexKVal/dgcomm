@@ -6,4 +6,4 @@ tmp/
 
 # project specific
 public/amazon_photos
-tmp_scripts/
+# tmp_scripts/

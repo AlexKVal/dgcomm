@@ -1,4 +1,8 @@
 Product.delete_all
-50.times do |n|
-  Product.create!(:name => Faker::Lorem.words.join(' '))
+File.open('db/games_names.txt', 'r') do |file|
+  100.times do |n|
+    #Product.create!(:name => Faker::Lorem.words.join(' '))
+    Product.create!(name: file.gets.strip)
+    print '.'
+  end
 end
