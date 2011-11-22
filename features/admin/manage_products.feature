@@ -13,12 +13,17 @@ Feature: Admin managing Products
     And follow "Ruby on Rails book"
     When I fill in "product_name" with "apache baseball cap 99"
     When I press "Update"
-    Then I should see "Successfully updated!"
+    Then I should see "Successfully updated"
 
-  @del
   Scenario: Deleting product
     Given a product with the name "Ruby on Rails book"
     When I go to path "/admin/products"
     And follow "Remove"
-    Then I should see "Product has been deleted!"
+    Then I should see "Product has been deleted"
 
+  Scenario: Adding a new product
+    When I go to path "/admin/products"
+    And follow "Add a new product"
+    When I fill in "product_name" with "Ruby on Rails book"
+    When I press "Create"
+    Then I should see "Product was successfully added"
