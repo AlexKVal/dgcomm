@@ -4,8 +4,9 @@ require "open-uri"
 
 DESCRIPTIONS_DIR = "tmp_scripts/descriptions"
 #empty_dir DESCRIPTIONS_DIR
-system "rm -r #{DESCRIPTIONS_DIR}/*"
-system "mkdir #{DESCRIPTIONS_DIR}"
+FileUtils.rm_rf Dir.glob("#{DESCRIPTIONS_DIR}/*")
+#system "rm -r #{DESCRIPTIONS_DIR}/*"
+#system "mkdir #{DESCRIPTIONS_DIR}"
 
 def grab_description(productname, desc_url)
   desc_element = Nokogiri::HTML(open desc_url).at_css(".productDescriptionWrapper")

@@ -1,5 +1,6 @@
-- products pagination
-
+- products
+  admin editing description
+  
 - products +price
   to admin/products
   to home products

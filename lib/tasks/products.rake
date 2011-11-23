@@ -1,5 +1,6 @@
 def empty_dir(path)
-  Dir.entries(path).reject { |entry| ['.', '..'].include? entry }.each { |f| File.delete("#{path}/#{f}") }
+  #Dir.entries(path).reject { |entry| ['.', '..'].include? entry }.each { |f| File.delete("#{path}/#{f}") }
+  FileUtils.rm_rf Dir.glob("#{path}/*")
 end
 
 def grab_description(productname, desc_url)
