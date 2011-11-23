@@ -16,5 +16,4 @@ doc.css(".product").each do |item|
   filename = File.basename(src_url)
   #system("cd #{Rails.root}/public/amazon_photos/I; curl -sOR #{src_path}")
   system("curl --silent --remote-time --output public/amazon_photos/I/#{filename} #{src_url}")
-  #puts "\n===================================="
 end

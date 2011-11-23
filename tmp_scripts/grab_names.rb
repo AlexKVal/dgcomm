@@ -13,14 +13,7 @@ File.open(filename, 'w') do |file|
       #p name
       file.puts name
       print '.'
-
-      #p "#{i.at_css('.srTitle').text} - #{i.at_css('.listprice, .otherprice').text}"
-      #src_url = item.at_css('img')[:src]
-      #filename = File.basename(src_url)
-      #system("cd #{Rails.root}/public/amazon_photos/I; curl -sOR #{src_path}")
-      #system("curl --silent --remote-time --output public/amazon_photos/I/#{filename} #{src_url}")
-      #puts "\n===================================="
     end
-    puts "\n#{n}===================================="
+    puts "\n#{n} #{'='*15}"
   end
 end

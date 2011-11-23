@@ -30,7 +30,7 @@ url = 'http://www.amazon.com/Best-Sellers-Video-Games-Game-Downloads/zgbs/videog
     #file.puts name
     print '.'
   end
-  puts "\n#{n}===================================="
+  puts "\n#{n} #{'='*15}"
 end
 #end
 
